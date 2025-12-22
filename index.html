@@ -8,25 +8,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const hamburger = document.querySelector('.hamburger');
-            const navMenu = document.querySelector('.nav-menu');
-            
-            hamburger.addEventListener('click', function() {
-                hamburger.classList.toggle('active');
-                navMenu.classList.toggle('active');
-            });
-            
-            // Close menu when clicking on a link
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.addEventListener('click', () => {
-                    hamburger.classList.remove('active');
-                    navMenu.classList.remove('active');
-                });
-            });
-        });
-    </script>
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
@@ -93,10 +74,11 @@
                     <h3>Computer-Reparatur</h3>
                     <p>Professionelle Reparatur und Wartung von Desktop-PCs und Notebooks. Hardware-Austausch, Software-Probleme und Datenrettung.</p>
                     <ul class="service-list">
-                        <li>Hardware-Reparatur</li>
+                        <li>Hardware-Reparatur & -Aufrüstung</li>
                         <li>Software-Installation</li>
-                        <li>Virus-Entfernung</li>
-                        <li>Datenrettung</li>
+                        <li>Virenbeseitigung</li>
+                        <li>Fehlerdiagnose & Datenrettung</li>
+                        <li>Mainboard-Reparatur</li>
                     </ul>
                 </div>
 
@@ -107,10 +89,11 @@
                     <h3>Smartphone-Reparatur</h3>
                     <p>Express-Reparatur für Smartphones aller Marken. Display-Tausch, Akku-Wechsel und weitere Reparaturen schnell und zuverlässig.</p>
                     <ul class="service-list">
-                        <li>Display-Reparatur</li>
+                        <li>Display-Austausch</li>
                         <li>Akku-Austausch</li>
-                        <li>Ladebuchse-Reparatur</li>
+                        <li>Ladebuchsen-Reparatur</li>
                         <li>Software-Updates</li>
+                        <li>Datenübernahme & Datenrettung</li>
                     </ul>
                 </div>
 
@@ -121,10 +104,11 @@
                     <h3>Tablet-Reparatur</h3>
                     <p>Reparaturservice für Tablets aller Hersteller. Von iPad bis Android-Tablets - wir kümmern uns um Ihre Geräte.</p>
                     <ul class="service-list">
-                        <li>Glas-Reparatur</li>
-                        <li>Akku-Tausch</li>
+                        <li>Display-Austausch</li>
+                        <li>Akku-Austausch</li>
                         <li>System-Wiederherstellung</li>
-                        <li>Wasser-Schaden-Behandlung</li>
+                        <li>Software-Updates</li>
+                        <li>Datenübernahme & Datenrettung</li>
                     </ul>
                 </div>
             </div>
@@ -203,5 +187,6 @@
             </div>
         </div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
