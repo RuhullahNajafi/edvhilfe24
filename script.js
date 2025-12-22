@@ -40,11 +40,16 @@ document.addEventListener('DOMContentLoaded', function() {
         checkMobile();
 
         // Handle resize
+        let lastWidth = window.innerWidth;
         window.addEventListener('resize', () => {
-            canvas.width = canvas.parentElement.offsetWidth;
-            canvas.height = canvas.parentElement.offsetHeight;
-            checkMobile();
-            init();
+            // Only re-init if width changes (prevents reload on mobile scroll bar hide/show)
+            if (window.innerWidth !== lastWidth) {
+                lastWidth = window.innerWidth;
+                canvas.width = canvas.parentElement.offsetWidth;
+                canvas.height = canvas.parentElement.offsetHeight;
+                checkMobile();
+                init();
+            }
         });
 
         // Mouse position
