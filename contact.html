@@ -103,7 +103,11 @@
                 <!-- Contact Form -->
                 <div class="contact-form-wrapper">
                     <h3>Senden Sie uns eine Nachricht</h3>
-                    <form class="contact-form" id="contactForm">
+                    <form class="contact-form" action="https://formsubmit.co/info@edvhilfe24.de" method="POST">
+                        <!-- Formsubmit.co Configuration -->
+                        <input type="hidden" name="_subject" value="Neue Anfrage über Webseite">
+                        <input type="hidden" name="_captcha" value="false">
+                        
                         <div class="form-group">
                             <label for="name">Name *</label>
                             <input type="text" id="name" name="name" required>
@@ -196,14 +200,5 @@
             </div>
         </div>
     </footer>
-
-    <script>
-        // Simple form submission handler (for demonstration)
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Vielen Dank für Ihre Nachricht! Wir werden uns schnellstmöglich bei Ihnen melden.');
-            this.reset();
-        });
-    </script>
 </body>
 </html>
