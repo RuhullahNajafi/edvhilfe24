@@ -209,4 +209,31 @@ document.addEventListener('DOMContentLoaded', function() {
         init();
         animate();
     }
+
+    // Cookie Banner Functionality
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptBtn = document.getElementById('accept-cookies');
+    const declineBtn = document.getElementById('decline-cookies');
+
+    // Check if user has already made a choice
+    if (!localStorage.getItem('cookieConsent')) {
+        // Show banner after a short delay
+        setTimeout(() => {
+            cookieBanner.classList.add('show');
+        }, 1000);
+    }
+
+    if (acceptBtn) {
+        acceptBtn.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'accepted');
+            cookieBanner.classList.remove('show');
+        });
+    }
+
+    if (declineBtn) {
+        declineBtn.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'declined');
+            cookieBanner.classList.remove('show');
+        });
+    }
 });
