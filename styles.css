@@ -451,6 +451,12 @@ body {
     background: var(--white);
     border-radius: 10px;
     box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
 }
 
 .feature-icon {
@@ -459,25 +465,18 @@ body {
     font-weight: bold;
 }
 
-.tech-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-}
-
-.tech-item {
-    background: var(--white);
-    padding: 3rem;
+.about-img {
+    width: 100%;
+    height: auto;
     border-radius: 15px;
-    font-size: 4rem;
-    text-align: center;
-    box-shadow: var(--shadow);
-    transition: all 0.3s ease;
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.3s ease;
+    object-fit: cover;
+    max-height: 500px;
 }
 
-.tech-item:hover {
-    transform: rotate(10deg) scale(1.1);
-    box-shadow: var(--shadow-lg);
+.about-img:hover {
+    transform: scale(1.02);
 }
 
 /* ===================================
@@ -784,10 +783,6 @@ body {
 
     .about-content {
         grid-template-columns: 1fr;
-    }
-
-    .tech-grid {
-        grid-template-columns: repeat(2, 1fr);
     }
 
     .features {
