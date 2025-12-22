@@ -319,6 +319,16 @@ body {
     font-size: 4rem;
     margin-bottom: 1.5rem;
     animation: float 3s ease-in-out infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.service-icon svg {
+    width: 4rem;
+    height: 4rem;
+    stroke: var(--accent-color);
+    stroke-width: 1.5;
 }
 
 .service-card:nth-child(2) .service-icon {
