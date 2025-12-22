@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kontaktieren Sie edvhilfe24 - Ihr IT-Reparaturservice">
+    <title>Kontakt - edvhilfe24</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1 class="logo">edvhilfe24</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="index.html#services" class="nav-link">Services</a></li>
+                <li><a href="index.html#about" class="nav-link">Über uns</a></li>
+                <li><a href="contact.html" class="nav-link active">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contact Hero -->
+    <section class="contact-hero">
+        <div class="container">
+            <h2 class="hero-title">Kontaktieren Sie uns</h2>
+            <p class="hero-subtitle">Wir sind für Sie da</p>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h3>Kontaktinformationen</h3>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div class="info-content">
+                            <h4>Adresse</h4>
+                            <p>Musterstraße 123<br>12345 Berlin<br>Deutschland</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">📞</div>
+                        <div class="info-content">
+                            <h4>Telefon</h4>
+                            <p><a href="tel:+491234567890">+49 (0) 123 456789</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">📧</div>
+                        <div class="info-content">
+                            <h4>E-Mail</h4>
+                            <p><a href="mailto:info@edvhilfe24.de">info@edvhilfe24.de</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <div class="info-icon">🕒</div>
+                        <div class="info-content">
+                            <h4>Öffnungszeiten</h4>
+                            <p>
+                                Montag - Freitag: 09:00 - 18:00<br>
+                                Samstag: 10:00 - 14:00<br>
+                                Sonntag: Geschlossen
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="contact-form-wrapper">
+                    <h3>Senden Sie uns eine Nachricht</h3>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">E-Mail *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Telefon</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="service">Service</label>
+                            <select id="service" name="service">
+                                <option value="">Bitte wählen...</option>
+                                <option value="computer">Computer-Reparatur</option>
+                                <option value="phone">Handy-Reparatur</option>
+                                <option value="tablet">Tablet-Reparatur</option>
+                                <option value="other">Sonstiges</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Nachricht *</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Nachricht senden</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <h3>So finden Sie uns</h3>
+            <div class="map-wrapper">
+                <!-- Using OpenStreetMap embed as an example - replace coordinates with actual location -->
+                <iframe 
+                    width="100%" 
+                    height="450" 
+                    frameborder="0" 
+                    scrolling="no" 
+                    marginheight="0" 
+                    marginwidth="0" 
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=13.377704620361328%2C52.51622086393074%2C13.404254913330078%2C52.52806998184302&amp;layer=mapnik&amp;marker=52.522145429992936%2C13.390979766845703"
+                    style="border: 1px solid #ccc; border-radius: 8px;">
+                </iframe>
+                <br/>
+                <small>
+                    <a href="https://www.openstreetmap.org/?mlat=52.5221&amp;mlon=13.3910#map=16/52.5221/13.3910" target="_blank">
+                        Größere Karte anzeigen
+                    </a>
+                </small>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>edvhilfe24</h3>
+                    <p>Ihr zuverlässiger Partner für IT-Reparaturen</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html#services">Services</a></li>
+                        <li><a href="index.html#about">Über uns</a></li>
+                        <li><a href="contact.html">Kontakt</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontakt</h4>
+                    <p>📧 info@edvhilfe24.de</p>
+                    <p>📞 +49 (0) 123 456789</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 edvhilfe24.de - Alle Rechte vorbehalten</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple form submission handler (for demonstration)
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Vielen Dank für Ihre Nachricht! Wir werden uns schnellstmöglich bei Ihnen melden.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
