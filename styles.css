@@ -272,6 +272,41 @@ body {
 }
 
 /* ===================================
+   Stats Section
+   =================================== */
+.stats {
+    background: var(--primary-color);
+    padding: 3rem 0;
+    color: var(--white);
+    margin-top: -2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.stat-item {
+    padding: 1rem;
+}
+
+.stat-number {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: var(--white);
+}
+
+.stat-label {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* ===================================
    Services Section
    =================================== */
 .services {
