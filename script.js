@@ -23,15 +23,27 @@ document.addEventListener('DOMContentLoaded', function() {
     if (canvas) {
         const ctx = canvas.getContext('2d');
         let particlesArray;
+        let isMobile = false;
+
+        // Check if we are in mobile view
+        function checkMobile() {
+            if (hamburger) {
+                isMobile = window.getComputedStyle(hamburger).display !== 'none';
+            } else {
+                isMobile = window.innerWidth < 768;
+            }
+        }
 
         // Set canvas size
         canvas.width = canvas.parentElement.offsetWidth;
         canvas.height = canvas.parentElement.offsetHeight;
+        checkMobile();
 
         // Handle resize
         window.addEventListener('resize', () => {
             canvas.width = canvas.parentElement.offsetWidth;
             canvas.height = canvas.parentElement.offsetHeight;
+            checkMobile();
             init();
         });
 
@@ -85,23 +97,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
 
                 // Check collision detection - mouse position / particle position
-                let dx = mouse.x - this.x;
-                let dy = mouse.y - this.y;
-                let distance = Math.sqrt(dx*dx + dy*dy);
-                
-                if (distance < mouse.radius + this.size) {
-                    const forceDirectionX = dx / distance;
-                    const forceDirectionY = dy / distance;
-                    const maxDistance = mouse.radius;
-                    const force = (maxDistance - distance) / maxDistance;
-                    const directionX = forceDirectionX * force * 3; // Speed factor
-                    const directionY = forceDirectionY * force * 3;
+                if (!isMobile) {
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let distance = Math.sqrt(dx*dx + dy*dy);
+                    
+                    if (distance < mouse.radius + this.size) {
+                        const forceDirectionX = dx / distance;
+                        const forceDirectionY = dy / distance;
+                        const maxDistance = mouse.radius;
+                        const force = (maxDistance - distance) / maxDistance;
+                        const directionX = forceDirectionX * force * 3; // Speed factor
+                        const directionY = forceDirectionY * force * 3;
 
-                    if (this.x - directionX > 0 && this.x - directionX < canvas.width) {
-                        this.x -= directionX;
-                    }
-                    if (this.y - directionY > 0 && this.y - directionY < canvas.height) {
-                        this.y -= directionY;
+                        if (this.x - directionX > 0 && this.x - directionX < canvas.width) {
+                            this.x -= directionX;
+                        }
+                        if (this.y - directionY > 0 && this.y - directionY < canvas.height) {
+                            this.y -= directionY;
+                        }
                     }
                 }
 
@@ -116,7 +130,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Create particle array
         function init() {
-            particlesArray = [];
+            particlesArray = [];isMobile
             // Increase particle density on smaller screens
             let densityDivisor = (canvas.width < 768) ? 4000 : 9000;
             let numberOfParticles = (canvas.height * canvas.width) / densityDivisor;
@@ -150,7 +164,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Adjust connection distance based on screen size
             // On mobile, we want connections to span a larger relative portion of the screen
-            let connectionDivisor = (canvas.width < 768) ? 4.5 : 7;
+            let connectionDivisor = isMobile ? 4.5 : 7;
             const maxDistance = (canvas.width/connectionDivisor) * (canvas.height/connectionDivisor);
 
             for (let a = 0; a < particlesArray.length; a++) {
@@ -172,7 +186,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
                 
                 // Connect to mouse
-                if (mouse.x !== null && mouse.y !== null) {
+                if (!isMobile && mouse.x !== null && mouse.y !== null) {
                     let dx = particlesArray[a].x - mouse.x;
                     let dy = particlesArray[a].y - mouse.y;
                     let distance = (dx * dx) + (dy * dy);
