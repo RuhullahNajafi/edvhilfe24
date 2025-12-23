@@ -71,10 +71,19 @@ body {
 }
 
 .logo span {
+    display: flex;
+    align-items: center;
+}
+
+.logo-text {
     background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+.logo-number {
+    color: var(--accent-color);
 }
 
 .nav-menu {
